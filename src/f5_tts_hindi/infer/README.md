@@ -22,7 +22,7 @@ Currently supported features:
 - Multi-Style / Multi-Speaker Generation
 - Voice Chat powered by Qwen2.5-3B-Instruct
 
-The cli command `f5-tts_infer-gradio` equals to `python src/f5_tts/infer/infer_gradio.py`, which launches a Gradio APP (web interface) for inference.
+The cli command `f5-tts_infer-gradio` equals to `python src/f5_tts_hindi/infer/infer_gradio.py`, which launches a Gradio APP (web interface) for inference.
 
 The script will load model checkpoints from Huggingface. You can also manually download files and update the path to `load_model()` in `infer_gradio.py`. Currently only load TTS models first, will load ASR model to do transcription if `ref_text` not provided, will load LLM model if use Voice Chat.
 
@@ -44,7 +44,7 @@ main_app.launch()
 
 ## CLI Inference
 
-The cli command `f5-tts_infer-cli` equals to `python src/f5_tts/infer/infer_cli.py`, which is a command line tool for inference.
+The cli command `f5-tts_infer-cli` equals to `python src/f5_tts_hindi/infer/infer_cli.py`, which is a command line tool for inference.
 
 The script will load model checkpoints from Huggingface. You can also manually download files and use `--ckpt_file` to specify the model you want to load, or directly update in `infer_cli.py`.
 
@@ -70,7 +70,7 @@ And a `.toml` file would help with more flexible usage.
 f5-tts_infer-cli -c custom.toml
 ```
 
-For example, you can use `.toml` to pass in variables, refer to `src/f5_tts/infer/examples/basic/basic.toml`:
+For example, you can use `.toml` to pass in variables, refer to `src/f5_tts_hindi/infer/examples/basic/basic.toml`:
 
 ```toml
 # F5-TTS | E2-TTS
@@ -85,7 +85,7 @@ remove_silence = false
 output_dir = "tests"
 ```
 
-You can also leverage `.toml` file to do multi-style generation, refer to `src/f5_tts/infer/examples/multi/story.toml`.
+You can also leverage `.toml` file to do multi-style generation, refer to `src/f5_tts_hindi/infer/examples/multi/story.toml`.
 
 ```toml
 # F5-TTS | E2-TTS
@@ -107,21 +107,21 @@ ref_text = ""
 ref_audio = "infer/examples/multi/country.flac"
 ref_text = ""
 ```
-You should mark the voice with `[main]` `[town]` `[country]` whenever you want to change voice, refer to `src/f5_tts/infer/examples/multi/story.txt`.
+You should mark the voice with `[main]` `[town]` `[country]` whenever you want to change voice, refer to `src/f5_tts_hindi/infer/examples/multi/story.txt`.
 
 ## Speech Editing
 
 To test speech editing capabilities, use the following command:
 
 ```bash
-python src/f5_tts/infer/speech_edit.py
+python src/f5_tts_hindi/infer/speech_edit.py
 ```
 
 ## Socket Realtime Client
 
 To communicate with socket server you need to run 
 ```bash
-python src/f5_tts/socket_server.py
+python src/f5_tts_hindi/socket_server.py
 ```
 
 <details>

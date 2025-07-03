@@ -72,7 +72,7 @@ Currently supported features:
 - Basic TTS with Chunk Inference
 - Multi-Style / Multi-Speaker Generation
 - Voice Chat powered by Qwen2.5-3B-Instruct
-- [Custom inference with more language support](src/f5_tts/infer/SHARED.md)
+- [Custom inference with more language support](src/f5_tts_hindi/infer/SHARED.md)
 
 ```bash
 # Launch a Gradio app (web interface)
@@ -96,18 +96,18 @@ f5-tts_infer-cli \
 --ref_text "The content, subtitle or transcription of reference audio." \
 --gen_text "Some text you want TTS model generate for you."
 
-# Run with default setting. src/f5_tts/infer/examples/basic/basic.toml
+# Run with default setting. src/f5_tts_hindi/infer/examples/basic/basic.toml
 f5-tts_infer-cli
 # Or with your own .toml file
 f5-tts_infer-cli -c custom.toml
 
-# Multi voice. See src/f5_tts/infer/README.md
-f5-tts_infer-cli -c src/f5_tts/infer/examples/multi/story.toml
+# Multi voice. See src/f5_tts_hindi/infer/README.md
+f5-tts_infer-cli -c src/f5_tts_hindi/infer/examples/multi/story.toml
 ```
 
 ### 3. More instructions
 
-- In order to have better generation results, take a moment to read [detailed guidance](src/f5_tts/infer).
+- In order to have better generation results, take a moment to read [detailed guidance](src/f5_tts_hindi/infer).
 - The [Issues](https://github.com/SWivid/F5-TTS/issues?q=is%3Aissue) are very useful, please try to find the solution by properly searching the keywords of problem encountered. If no answer found, then feel free to open an issue.
 
 
@@ -115,7 +115,7 @@ f5-tts_infer-cli -c src/f5_tts/infer/examples/multi/story.toml
 
 ### 1. Gradio App
 
-Read [training & finetuning guidance](src/f5_tts/train) for more instructions.
+Read [training & finetuning guidance](src/f5_tts_hindi/train) for more instructions.
 
 ```bash
 # Quick start with Gradio web interface
@@ -123,7 +123,7 @@ f5-tts_finetune-gradio
 ```
 
 
-## [Evaluation](src/f5_tts/eval)
+## [Evaluation](src/f5_tts_hindi/eval)
 
 
 ## Development
