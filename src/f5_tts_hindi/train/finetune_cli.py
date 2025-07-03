@@ -3,9 +3,9 @@ import os
 import shutil
 
 from cached_path import cached_path
-from f5_tts.model import CFM, UNetT, DiT, Trainer
-from f5_tts.model.utils import get_tokenizer
-from f5_tts.model.dataset import load_dataset
+from f5_tts_hindi.model import CFM, UNetT, DiT, Trainer
+from f5_tts_hindi.model.utils import get_tokenizer
+from f5_tts_hindi.model.dataset import load_dataset
 from importlib.resources import files
 
 

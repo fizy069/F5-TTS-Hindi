@@ -14,7 +14,7 @@ import torchaudio
 from tqdm import tqdm
 from datasets.arrow_writer import ArrowWriter
 
-from f5_tts.model.utils import (
+from f5_tts_hindi.model.utils import (
     convert_char_to_pinyin,
 )
 

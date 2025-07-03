@@ -25,8 +25,8 @@ from pydub import AudioSegment, silence
 from transformers import pipeline
 from vocos import Vocos
 
-from f5_tts.model import CFM
-from f5_tts.model.utils import (
+from f5_tts_hindi.model import CFM
+from f5_tts_hindi.model.utils import (
     get_tokenizer,
     convert_char_to_pinyin,
 )

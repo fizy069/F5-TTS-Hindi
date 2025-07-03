@@ -27,9 +27,9 @@ from datasets.arrow_writer import ArrowWriter
 from safetensors.torch import save_file
 from scipy.io import wavfile
 from cached_path import cached_path
-from f5_tts.api import F5TTS
-from f5_tts.model.utils import convert_char_to_pinyin
-from f5_tts.infer.utils_infer import transcribe
+from f5_tts_hindi.api import F5TTS
+from f5_tts_hindi.model.utils import convert_char_to_pinyin
+from f5_tts_hindi.infer.utils_infer import transcribe
 from importlib.resources import files
 
 

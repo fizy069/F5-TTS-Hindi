@@ -2,9 +2,9 @@
 
 from importlib.resources import files
 
-from f5_tts.model import CFM, DiT, Trainer, UNetT
-from f5_tts.model.dataset import load_dataset
-from f5_tts.model.utils import get_tokenizer
+from f5_tts_hindi.model import CFM, DiT, Trainer, UNetT
+from f5_tts_hindi.model.dataset import load_dataset
+from f5_tts_hindi.model.utils import get_tokenizer
 
 # -------------------------- Dataset Settings --------------------------- #
 

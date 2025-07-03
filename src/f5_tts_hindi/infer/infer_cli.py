@@ -10,14 +10,14 @@ import soundfile as sf
 import tomli
 from cached_path import cached_path
 
-from f5_tts.infer.utils_infer import (
+from f5_tts_hindi.infer.utils_infer import (
     infer_process,
     load_model,
     load_vocoder,
     preprocess_ref_audio_text,
     remove_silence_for_generated_wav,
 )
-from f5_tts.model import DiT, UNetT
+from f5_tts_hindi.model import DiT, UNetT
 
 parser = argparse.ArgumentParser(
     prog="python3 infer-cli.py",

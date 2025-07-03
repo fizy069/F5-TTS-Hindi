@@ -10,7 +10,7 @@ from importlib.resources import files
 
 import numpy as np
 
-from f5_tts.eval.utils_eval import (
+from f5_tts_hindi.eval.utils_eval import (
     get_librispeech_test,
     run_asr_wer,
     run_sim,

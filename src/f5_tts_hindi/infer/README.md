@@ -29,7 +29,7 @@ The script will load model checkpoints from Huggingface. You can also manually d
 Could also be used as a component for larger application.
 ```python
 import gradio as gr
-from f5_tts.infer.infer_gradio import app
+from f5_tts_hindi.infer.infer_gradio import app
 
 with gr.Blocks() as main_app:
     gr.Markdown("# This is an example of using F5-TTS within a bigger Gradio app")

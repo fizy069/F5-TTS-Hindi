@@ -29,8 +29,8 @@ def gpu_decorator(func):
         return func
 
 
-from f5_tts.model import DiT, UNetT
-from f5_tts.infer.utils_infer import (
+from f5_tts_hindi.model import DiT, UNetT
+from f5_tts_hindi.infer.utils_infer import (
     load_vocoder,
     load_model,
     preprocess_ref_audio_text,

@@ -6,9 +6,9 @@ import torch
 import torch.nn.functional as F
 import torchaudio
 
-from f5_tts.infer.utils_infer import load_checkpoint, load_vocoder, save_spectrogram
-from f5_tts.model import CFM, DiT, UNetT
-from f5_tts.model.utils import convert_char_to_pinyin, get_tokenizer
+from f5_tts_hindi.infer.utils_infer import load_checkpoint, load_vocoder, save_spectrogram
+from f5_tts_hindi.model import CFM, DiT, UNetT
+from f5_tts_hindi.model.utils import convert_char_to_pinyin, get_tokenizer
 
 device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 

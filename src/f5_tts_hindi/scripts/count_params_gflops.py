@@ -3,7 +3,7 @@ import os
 
 sys.path.append(os.getcwd())
 
-from f5_tts.model import CFM, DiT
+from f5_tts_hindi.model import CFM, DiT
 
 import torch
 import thop
