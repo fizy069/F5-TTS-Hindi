@@ -3,9 +3,9 @@ requires = ["setuptools >= 61.0", "setuptools-scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "f5-tts"
+name = "f5-tts-hindi"
 version = "0.1.2"
-description = "F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching"
+description = "F5-TTS-Hindi: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching"
 readme = "README.md"
 license = {text = "MIT License"}
 classifiers = [
@@ -52,7 +52,7 @@ eval = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/SWivid/F5-TTS"
+Homepage = "https://github.com/fizy069/F5-TTS"
 
 [project.scripts]
 "f5-tts_infer-cli" = "f5_tts.infer.infer_cli:main"
