@@ -35,6 +35,7 @@ class F5TTS:
         hf_cache_dir=None,
     ):
         # Initialize parameters
+        self.model_type = model_type
         self.final_wave = None
         self.target_sample_rate = target_sample_rate
         self.hop_length = hop_length
@@ -70,6 +71,29 @@ class F5TTS:
                         cached_path("hf://SWivid/F5-TTS/F5TTS_Base_bigvgan/model_1250000.pt", cache_dir=hf_cache_dir)
                     )
             model_cfg = dict(dim=1024, depth=22, heads=16, ff_mult=2, text_dim=512, conv_layers=4)
+            model_cls = DiT
+        elif model_type == "F5-TTS-small":
+            if not ckpt_file:
+                if mel_spec_type == "vocos":
+                    ckpt_file = str(
+                        cached_path("hf://SPRINGLab/F5-Hindi-24KHz/model_2500000.safetensors", cache_dir=hf_cache_dir)
+                    )
+                    if not vocab_file:
+                        vocab_file = str(
+                            cached_path("hf://SPRINGLab/F5-Hindi-24KHz/vocab.txt", cache_dir=hf_cache_dir)
+                        )
+                elif mel_spec_type == "bigvgan":
+                    raise ValueError("F5-TTS-small does not support bigvgan vocoder yet")
+            else:
+                if ckpt_file.startswith("hf://"):
+                    ckpt_file = str(cached_path(ckpt_file, cache_dir=hf_cache_dir))
+                if vocab_file and vocab_file.startswith("hf://"):
+                    vocab_file = str(cached_path(vocab_file, cache_dir=hf_cache_dir))
+                elif not vocab_file:
+                    vocab_file = str(
+                        cached_path("hf://SPRINGLab/F5-Hindi-24KHz/vocab.txt", cache_dir=hf_cache_dir)
+                    )
+            model_cfg = dict(dim=768, depth=18, heads=12, ff_mult=2, text_dim=512, conv_layers=4)
             model_cls = DiT
         elif model_type == "E2-TTS":
             if not ckpt_file:
@@ -123,6 +147,8 @@ class F5TTS:
 
         ref_file, ref_text = preprocess_ref_audio_text(ref_file, ref_text, device=self.device)
 
+        indic = self.model_type == "F5-TTS-small"
+
         wav, sr, spect = infer_process(
             ref_file,
             ref_text,
@@ -140,6 +166,7 @@ class F5TTS:
             speed=speed,
             fix_duration=fix_duration,
             device=self.device,
+            indic=indic,
         )
 
         if file_wave is not None:
